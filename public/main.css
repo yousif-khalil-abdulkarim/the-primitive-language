@@ -1,0 +1,84 @@
+.container {
+    --padding: 64px;
+    padding: var(--padding);
+    height: calc(100vh - 2 * var(--padding));
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+}
+.container > *:not(:last-child) {
+    margin-bottom: 32px;
+}
+.title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+.frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--padding);
+}
+.label {
+    color: black;
+    margin-bottom: 4px;
+    font-weight: bolder;
+    font-family: sans-serif;
+}
+.sub-container > *:not(:last-child) {
+    margin-bottom: 16px;
+}
+.text-area {
+    display: block;
+    height: calc(256px + 128px);
+    width: 512px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.button {
+    display: block;
+}
+.doc {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.doc-section {
+    flex-basis: 45%;
+}
+.doc-section > *:not(:last-child) {
+    margin-bottom: 16px;
+}
+b {
+    font-weight: bolder;
+}
+i {
+    font-style: italic;
+}
+th {
+    text-align: start;
+}
+table {
+    border-style: solid;
+    border-color: gray;
+}
+tr {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1024px) {
+    .frame {
+        flex-wrap: wrap;
+    }
+    .doc-section {
+        flex-basis: auto;
+    }
+    .container {
+        width: auto;
+    }
+}

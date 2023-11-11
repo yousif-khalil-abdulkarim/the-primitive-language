@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Primitive language</title>
+        <link rel="stylesheet" href="./reset.css" />
+        <link rel="stylesheet" href="./main.css" />
+    </head>
+    <body>
+        <main class="container">
+            <h1 class="title">The primitive language</h1>
+            <div class="frame">
+                <div class="sub-container">
+                    <p class="label">Editor</p>
+                    <textarea
+                        id="text-area-input"
+                        class="text-area"
+                        placeholder="Write code"
+                    ></textarea>
+                    <button id="button-run" class="button">run</button>
+                </div>
+                <div class="sub-container">
+                    <p class="label">Result</p>
+                    <textarea
+                        id="text-area-output"
+                        class="text-area"
+                        readonly
+                        disabled
+                    ></textarea>
+                    <button id="button-clear" class="button">clear</button>
+                </div>
+            </div>
+            <div class="doc">
+                <div class="doc-section">
+                    <p>
+                        The primitive language has three basic types of statements:
+                    </p>
+                    <div>
+                        <p class="label">
+                            AssgStmt 
+                        </p>
+                        <p>
+                            <b>Assign</b> the result of an <i>expression</i> to a <i>variable</i>.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="label">
+                            PrintStmt 
+                        </p>
+                        <p>
+                            Issue <b>printing</b> of (the result of) an <i>expression</i> to an output.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="label">
+                            ConfigStmt 
+                        </p>
+                        <p>
+                            Set a <b>configuration</b>. Only one option is available: changing
+                            the number base. A base can be either decimal, hexadecimal or
+                            binary. Affects subsequent printing statements.
+                        </p>
+                    </div>
+                </div>
+                <div class="doc-section">
+                    <p>
+                        Additionally, there are <b>expressions</b>:
+                    </p>
+                    <div>
+                        <p class="label">
+                            MathExp 
+                        </p>
+                        <p>
+                            A mathematical expression. Valid operands are <i>numbers</i>
+                            (integers) and <i>variables</i>. Valid operators are the basic arithmetic
+                            operators, +–*/. Additionally, parentheses are allowed to define
+                            scopes for nested expressions.
+                        </p>
+                    </div>
+                </div>
+                <div class="doc-section">
+                    <p>
+                        Example source and output
+                    </p>
+                    <div>
+                        <p class="label">
+                            Input: 
+                        </p>
+                        <table>
+                            <tr>
+                                <th>
+                                    <b>source code</b>
+                                </th>
+                                <th>
+                                    <b>Statement type</b>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    config dec <br/> 
+                                    print 1 + 1 <br/>
+                                    print 3 + 3 * 3 <br/>
+                                    print ( 3 + 3 ) * 3 <br/>
+                                    var1 = 2 - -2 <br/>
+                                    var2 = var1 <br/>
+                                    var3 = var2 * ( 16 / ( var2 - 2 ) ) <br/> 
+                                    print var1 <br/>
+                                    print var2 <br/>
+                                    print var3 <br/>
+                                    config hex <br/>
+                                    print var3 <br/>
+                                    config bin <br/>
+                                    print var3 <br/>
+                                </th>
+                                <th>
+                                    ConfigStmt <br/> 
+                                    PrintStmt <br/>
+                                    PrintStmt <br/>
+                                    PrintStmt <br/>
+                                    AssgStmt <br/>
+                                    AssgStmt <br/>
+                                    AssgStmt <br/> 
+                                    PrintStmt <br/>
+                                    PrintStmt <br/>
+                                    PrintStmt <br/>
+                                    ConfigStmt <br/>
+                                    PrintStmt <br/>
+                                    ConfigStmt <br/>
+                                    PrintStmt <br/>
+                            
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <p class="label">
+                            Output: 
+                        </p>
+                        <p>
+                            2 <br/>
+                            12 <br/>
+                            18 <br/>
+                            4 <br/>
+                            4 <br/>
+                            32 <br/>
+                            20 <br/>
+                            100000 <br/>
+                            
+                        </p>
+                    </div>
+                </div>
+                <div class="doc-section">
+                    <p>
+                        Other rules
+                    </p>
+                    <div>
+                        <p class="label">
+                            Config
+                        </p>
+                        <p>
+                            You must set the config at the beginning. <br>
+                            Config can be <b>dec</b>, <b>bin</b>, and <b>hex</b>. <br><br>
+                            If you set it to <b>dec</b> then values will be displayed as <b>decimal</b> number. <br><br>
+                            If you set it to <b>bin</b> then values will be displayed as <b>binary</b> number. <br><br>
+                            If you set it to  <b>hex</b> then values will be displayed as <b>hexadecimal</b> numbers. <br><br>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="label">
+                            Spacing
+                        </p>
+                        <p>
+                            There must be spacing between every character <br>
+                            Every keyword must be lowercase.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="./main.js"></script>
+    </body>
+</html>

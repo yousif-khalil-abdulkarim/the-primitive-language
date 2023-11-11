@@ -1,0 +1,10 @@
+{
+    "name": "parser",
+    "scripts": {
+        "build": "npx tsc && npx esbuild ./src/main.ts --bundle --outdir=public"
+    },
+    "devDependencies": {
+        "esbuild": "^0.19.5",
+        "typescript": "^5.2.2"
+    }
+}
